@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* LIGHT AND DARK */
+  .ld {
+    &-background-color {
+      @apply bg-primary-50 dark:bg-secondary-950;
+    }
+    &-background-gradient {
+      @apply bg-gradient-to-l from-secondary-200 via-secondary-50 to-secondary-200 dark:from-secondary-950 dark:via-gray-900 dark:to-secondary-950;
+    }
+    &-text-color {
+      @apply text-secondary-950 dark:text-primary-50;
+    }
+    &-background-gradient-text {
+      @apply text-transparent bg-clip-text dark:bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] dark:from-fuchsia-200 dark:via-violet-500 dark:to-orange-600 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-indigo-900 via-sky-700 to-rose-600;
+    }
+  }
+
+  .heading {
+    &-h1 {
+      @apply text-xl md:text-xl font-bold leading-[99%];
+    }
+
+    &-h2 {
+      @apply text-large md:text-large font-bold leading-[99%];
+    }
+
+    &-h3 {
+      @apply text-medium md:text-medium font-bold leading-[99%];
+    }
+  }
+
+  .link {
+    &-primary {
+      @apply text-secondary-950 dark:text-primary-50 font-bold hover:text-secondary-400 hover:dark:text-primary-400 transition-all duration-150 ease-in-out;
+    }
+    &-span {
+      @apply bg-left-bottom bg-gradient-to-r dark:from-secondary-100 dark:to-secondary-100 from-secondary-900 to-secondary-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out;
+    }
+  }
+
+  /* ABSOLUTE CENTER */
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
+
+  /* GRID */
+  .default-grid {
+    @apply grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-20 md:gap-x-24 xl:gap-x-28 2xl:gap-x-32;
+  }
+}
+
+body {
+  @apply tracking-narrow;
+}
