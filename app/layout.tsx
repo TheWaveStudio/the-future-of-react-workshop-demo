@@ -19,7 +19,6 @@ export default function RootLayout({
     <html lang="en" className={`${firaCode.variable}`} suppressHydrationWarning>
       <body className="ld-background-gradient ld-text-color">
         <ThemeProvider>
-          {/* https://beta.nextjs.org/docs/configuring/typescript#async-server-component-typescript-error */}
           {/* @ts-expect-error Async Server Component */}
           <Header />
           {children}

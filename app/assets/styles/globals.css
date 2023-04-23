@@ -14,14 +14,17 @@
     &-text-color {
       @apply text-secondary-950 dark:text-primary-50;
     }
-    &-background-gradient-text {
+    &-main-gradient {
+      @apply dark:bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] dark:from-fuchsia-200 dark:via-violet-500 dark:to-orange-600 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-indigo-900 via-sky-700 to-rose-600;
+    }
+    &-text-gradient {
       @apply text-transparent bg-clip-text dark:bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] dark:from-fuchsia-200 dark:via-violet-500 dark:to-orange-600 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-indigo-900 via-sky-700 to-rose-600;
     }
   }
 
   .heading {
     &-h1 {
-      @apply text-xl md:text-xl font-bold leading-[99%];
+      @apply text-xxl md:text-xxl font-bold leading-[99%];
     }
 
     &-h2 {
@@ -35,7 +38,10 @@
 
   .link {
     &-primary {
-      @apply text-secondary-950 dark:text-primary-50 font-bold hover:text-secondary-400 hover:dark:text-primary-400 transition-all duration-150 ease-in-out;
+      @apply text-secondary-950 dark:text-primary-50 font-bold transition-all duration-150 ease-in-out;
+      &-hover {
+        @apply text-primary-500 dark:text-primary-400 font-bold;
+      }
     }
     &-span {
       @apply bg-left-bottom bg-gradient-to-r dark:from-secondary-100 dark:to-secondary-100 from-secondary-900 to-secondary-900 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out;

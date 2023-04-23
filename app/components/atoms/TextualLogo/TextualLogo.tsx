@@ -5,7 +5,7 @@ import Link from "next/link";
 export const TextualLogo = ({ title, subtitle }: TextualLogoProps) => {
   return (
     <Link href="/" className="flex flex-col">
-      <span className="text-large font-bold">{title}</span>
+      <span className="text-xl font-bold">{title}</span>
       <span className="font-light -mt-[0.5rem]">{subtitle}</span>
     </Link>
   );

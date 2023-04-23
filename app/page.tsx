@@ -1,7 +1,7 @@
-import { Quote } from "./components/atoms/Quote/Quote";
+import { Quote } from "@/components/atoms/Quote/Quote";
 
 const getRandomQuote = async () => {
-  const response = await fetch("http://localhost:3000/api/quote");
+  const response = await fetch("https://dummyjson.com/quotes/random");
   const quote = await response.json();
   return quote;
 };
@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <main>
       <div className="container">
-        <Quote quote={quote.quote} />
+        <Quote quote={quote} />
       </div>
     </main>
   );

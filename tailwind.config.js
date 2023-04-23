@@ -49,9 +49,10 @@ module.exports = {
       fontSize: {
         xs: "14px",
         base: "16px",
-        medium: "24px",
-        large: "30px",
-        xl: "60px",
+        medium: "20px",
+        large: "24px",
+        xl: "30px",
+        xxl: "60px",
       },
       fontFamily: {
         sans: ["var(--font-fira-code)", ...fontFamily.serif],
