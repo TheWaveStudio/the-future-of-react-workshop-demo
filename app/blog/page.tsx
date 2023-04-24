@@ -1,4 +1,6 @@
 import { Posts } from "@/components/molecules/Posts/Posts";
+// import { PostsSkeleton } from "@/components/molecules/Posts/Posts.skeleton";
+// import { Suspense } from "react";
 
 export default async function Blog() {
   return (
@@ -9,3 +11,8 @@ export default async function Blog() {
     </main>
   );
 }
+
+// {/* <Suspense fallback={<PostsSkeleton />}> */}
+//   {/* @ts-expect-error Async Server Component */}
+//   <Posts />
+// {/* </Suspense> */}

@@ -2,7 +2,7 @@ import type { PostsResponse } from "@/types/data";
 import { Post } from "../Post/Post";
 
 const getPosts = async (userId?: string): Promise<PostsResponse> => {
-  // await new Promise((resolve, reject) => setTimeout(resolve, 5000));
+  // await new Promise((resolve, reject) => setTimeout(resolve, 3000));
   const response = await fetch(
     `https://dummyjson.com/posts${userId ? `/user/${userId}` : ""}`,
     {
