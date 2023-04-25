@@ -1,6 +1,5 @@
-import React from "react";
-import { TextualLogoProps } from "./TextualLogo.props";
 import Link from "next/link";
+import type { TextualLogoProps } from "./TextualLogo.props";
 
 export const TextualLogo = ({ title, subtitle }: TextualLogoProps) => {
   return (

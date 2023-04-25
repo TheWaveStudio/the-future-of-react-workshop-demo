@@ -1,5 +1,7 @@
 import { Posts } from "@/components/molecules/Posts/Posts";
+import { PostsSkeleton } from "@/components/molecules/Posts/Posts.skeleton";
 import type { User } from "@/types/data";
+import { Suspense } from "react";
 
 const getUser = async (userId: string): Promise<User> => {
   const response = await fetch(
@@ -22,7 +24,12 @@ export default async function UserPosts({
         Posts by {user.firstName} {user.lastName}
       </h3>
       {/* @ts-expect-error Async Server Component */}
-      <Posts userId={userId} />
+      <Posts userId={userId} simulateDelay />
     </main>
   );
 }
+
+// <Suspense fallback={<PostsSkeleton />}>
+// {/* @ts-expect-error Async Server Component */}
+// <Posts userId={userId}  simulateDelay />
+// </Suspense>

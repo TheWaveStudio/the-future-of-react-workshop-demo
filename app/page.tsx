@@ -1,4 +1,5 @@
 import { Quote } from "@/components/atoms/Quote/Quote";
+import { Metadata } from "next";
 
 const getRandomQuote = async () => {
   const response = await fetch("https://dummyjson.com/quotes/random");
@@ -23,3 +24,9 @@ export default async function Home() {
 //   description:
 //     "Siamo una Digital Agency di Catania di 25+ persone fortemente motivate a crescere. Crediamo nella qualità dei nostri lavori e nell'impatto che portano.",
 // };
+
+// export async function generateMetadata(): Promise<Metadata> {
+//   const response = await fetch("https://dummyjson.com/quotes/random");
+//   const { quote } = await response.json();
+//   return { title: "The Wave Studio 🌊", description: quote };
+// }
