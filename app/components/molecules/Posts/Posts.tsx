@@ -6,9 +6,11 @@ const getPosts = async (
   simulateDelay?: boolean
 ): Promise<PostsResponse> => {
   simulateDelay &&
-    (await new Promise((resolve, reject) => setTimeout(resolve, 3000)));
+    (await new Promise((resolve, reject) => setTimeout(resolve, 1500)));
   const response = await fetch(
-    `https://dummyjson.com/posts${userId ? `/user/${userId}` : ""}`
+    `https://dummyjson.com/${userId === "3" ? "postss" : "posts"}${
+      userId ? `/user/${userId}` : ""
+    }`
   );
   return response.json();
 };

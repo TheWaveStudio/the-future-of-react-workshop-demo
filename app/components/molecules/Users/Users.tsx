@@ -3,7 +3,7 @@ import { User } from "../User/User";
 import Link from "next/link";
 
 const getUsers = async (): Promise<UsersResponse> => {
-  // await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+  // await new Promise((resolve, reject) => setTimeout(resolve, 1500));
   const response = await fetch(
     "https://dummyjson.com/users?limit=3&select=firstName,lastName,image,id,username"
   );

@@ -1,8 +1,18 @@
 import { Quote } from "@/components/atoms/Quote/Quote";
 import { Metadata } from "next";
 
-const getRandomQuote = async () => {
+export async function generateMetadata(): Promise<Metadata> {
   const response = await fetch("https://dummyjson.com/quotes/random");
+  const { quote } = await response.json();
+  return { title: "The Wave Studio 🌊", description: quote };
+}
+
+const getRandomQuote = async () => {
+  const response = await fetch("https://dummyjson.com/quotes/random", {
+    next: {
+      revalidate: 5,
+    },
+  });
   const quote = await response.json();
   return quote;
 };
@@ -18,15 +28,3 @@ export default async function Home() {
     </main>
   );
 }
-
-// export const metadata = {
-//   title: "The Wave Studio 🌊",
-//   description:
-//     "Siamo una Digital Agency di Catania di 25+ persone fortemente motivate a crescere. Crediamo nella qualità dei nostri lavori e nell'impatto che portano.",
-// };
-
-// export async function generateMetadata(): Promise<Metadata> {
-//   const response = await fetch("https://dummyjson.com/quotes/random");
-//   const { quote } = await response.json();
-//   return { title: "The Wave Studio 🌊", description: quote };
-// }

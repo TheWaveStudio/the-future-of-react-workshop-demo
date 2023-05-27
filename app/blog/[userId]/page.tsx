@@ -23,13 +23,10 @@ export default async function UserPosts({
       <h3 className="heading-h3 mb-[4rem]">
         Posts by {user.firstName} {user.lastName}
       </h3>
-      {/* @ts-expect-error Async Server Component */}
-      <Posts userId={userId} simulateDelay />
+      <Suspense fallback={<PostsSkeleton />}>
+        {/* @ts-expect-error Async Server Component */}
+        <Posts userId={userId} simulateDelay />
+      </Suspense>
     </main>
   );
 }
-
-// <Suspense fallback={<PostsSkeleton />}>
-// {/* @ts-expect-error Async Server Component */}
-// <Posts userId={userId}  simulateDelay />
-// </Suspense>

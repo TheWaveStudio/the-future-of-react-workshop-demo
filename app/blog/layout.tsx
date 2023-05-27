@@ -1,6 +1,6 @@
 import { Users } from "@/components/molecules/Users/Users";
-// import { UsersSkeleton } from "@/components/molecules/Users/Users.skeleton";
-// import { Suspense } from "react";
+import { UsersSkeleton } from "@/components/molecules/Users/Users.skeleton";
+import { Suspense } from "react";
 
 export default function BlogLayout({
   children,
@@ -8,19 +8,18 @@ export default function BlogLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mt-[10rem]">
-      <div className="container">
-        <div className="default-grid">
-          {/* @ts-expect-error Async Server Component */}
-          <Users />
-          {children}
+    <div className="">
+      <div className="mt-[10rem]">
+        <div className="container">
+          <div className="default-grid">
+            <Suspense fallback={<UsersSkeleton />}>
+              {/* @ts-expect-error Async Server Component */}
+              <Users />
+            </Suspense>
+            {children}
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
-// <Suspense fallback={<UsersSkeleton />}>
-// {/* @ts-expect-error Async Server Component */}
-// <Users />
-// </Suspense>
